@@ -10,6 +10,7 @@ function App() {
   const [product2, setProduct2] = useState(null);
   const [product3, setProduct3] = useState(null);
   const [product4, setProduct4] = useState(null);
+  const [product5, setProduct5] = useState(null);
   const [error, setError] = useState("");
   const [address, setAddres] = useState(null);
   const contractAddress = "0xD049a50A50cAa17fcA7f2979251E2c8D7a89DFDa";
@@ -100,6 +101,19 @@ function App() {
     setProduct4(contractProduct4);
   };
 
+  //contract product5
+  useEffect(() => {
+    let timer = setInterval(() => contractProduct5Call(), 1000);
+    return function cleanup() {
+      clearInterval(timer);
+    };
+  });
+
+  const contractProduct5Call = async () => {
+    const contractProduct5 = await contract.methods.Products("4").call();
+    setProduct5(contractProduct5);
+  };
+
   //buy product1
   const buy1 = async () => {
     await contract.methods.buyProduct(0).send({
@@ -126,6 +140,13 @@ function App() {
     await contract.methods.buyProduct(3).send({
       from: address.toString(),
       value: "100000000000000000",
+    });
+  };
+  //buy product5
+  const buy5 = async () => {
+    await contract.methods.buyProduct(4).send({
+      from: address.toString(),
+      value: "20000000000000000",
     });
   };
   return (
@@ -242,6 +263,34 @@ function App() {
               product4 === null ? null : product4.shippingStatus
             }`}</ItemPrice>
             <BuyButton onClick={buy4}>Buy This Item!</BuyButton>
+            <ErrorMessage>
+              {address === null ? "Please connect your wallet!" : ""}
+            </ErrorMessage>
+          </ItemInfoContainer>
+        </ItemBox>
+        <ItemBox>
+          <ItemPictureContainer>
+            <ItemPicture src="https://i.pinimg.com/564x/27/8f/c3/278fc30c3852efaa0e55ba7f134368ed.jpg" />
+          </ItemPictureContainer>
+          <ItemInfoContainer>
+            <ItemName>{`Item name: ${
+              product5 === null ? null : product5.productName
+            }`}</ItemName>
+            <ItemPrice>{`Item price: ${
+              product5 === null ? null : product5.price / 10 ** 18
+            } ETHRopsten`}</ItemPrice>
+            <ItemPrice>
+              {`Is item sold: ${product5 === null ? null : product5.isSold}`}
+            </ItemPrice>
+            <ItemPrice>{`Owner: ${
+              product5 === null ? null : product5.owner.slice(0, 20)
+            }...`}</ItemPrice>
+            <ItemPrice>{`Shipping Status: ${
+              product5 === null ? null : product5.shippingStatus
+            }`}</ItemPrice>
+            <BuyButton disabled onClick={buy5}>
+              Buy This Item!
+            </BuyButton>
             <ErrorMessage>
               {address === null ? "Please connect your wallet!" : ""}
             </ErrorMessage>

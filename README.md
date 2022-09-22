@@ -11,6 +11,7 @@ Contract Details:
 - Only owner can witdraw the money from the contract.
 
 Frontend details:
+- cloudflare page can be found at https://secondhandmarket.pages.dev/ .
 - Done with react framework.
 - Metamask is used for wallet app.
 - Products are pulled from contract.

@@ -1,9 +1,5 @@
 [
-  {
-    "inputs": [],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
-  },
+  { "inputs": [], "stateMutability": "nonpayable", "type": "constructor" },
   {
     "anonymous": false,
     "inputs": [
@@ -30,56 +26,22 @@
     "type": "event"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
+    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "name": "Products",
     "outputs": [
-      {
-        "internalType": "string",
-        "name": "productName",
-        "type": "string"
-      },
-      {
-        "internalType": "bool",
-        "name": "isSold",
-        "type": "bool"
-      },
-      {
-        "internalType": "uint256",
-        "name": "price",
-        "type": "uint256"
-      },
-      {
-        "internalType": "address",
-        "name": "owner",
-        "type": "address"
-      },
-      {
-        "internalType": "string",
-        "name": "shippingStatus",
-        "type": "string"
-      }
+      { "internalType": "string", "name": "productName", "type": "string" },
+      { "internalType": "bool", "name": "isSold", "type": "bool" },
+      { "internalType": "uint256", "name": "price", "type": "uint256" },
+      { "internalType": "address", "name": "owner", "type": "address" },
+      { "internalType": "string", "name": "shippingStatus", "type": "string" }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      {
-        "internalType": "string",
-        "name": "_name",
-        "type": "string"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_price",
-        "type": "uint256"
-      }
+      { "internalType": "string", "name": "_name", "type": "string" },
+      { "internalType": "uint256", "name": "_price", "type": "uint256" }
     ],
     "name": "addProduct",
     "outputs": [],
@@ -87,13 +49,7 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_id",
-        "type": "uint256"
-      }
-    ],
+    "inputs": [{ "internalType": "uint256", "name": "_id", "type": "uint256" }],
     "name": "buyProduct",
     "outputs": [],
     "stateMutability": "payable",
@@ -101,16 +57,8 @@
   },
   {
     "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_productId",
-        "type": "uint256"
-      },
-      {
-        "internalType": "string",
-        "name": "_status",
-        "type": "string"
-      }
+      { "internalType": "uint256", "name": "_productId", "type": "uint256" },
+      { "internalType": "string", "name": "_status", "type": "string" }
     ],
     "name": "changeShippingStatus",
     "outputs": [],
@@ -119,80 +67,38 @@
   },
   {
     "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_productId",
-        "type": "uint256"
-      }
+      { "internalType": "uint256", "name": "_productId", "type": "uint256" }
     ],
     "name": "checkShippingStatus",
-    "outputs": [
-      {
-        "internalType": "string",
-        "name": "",
-        "type": "string"
-      }
-    ],
+    "outputs": [{ "internalType": "string", "name": "", "type": "string" }],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "contractBalance",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "owner",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
+    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "name": "productOwner",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_amount",
-        "type": "uint256"
-      },
-      {
-        "internalType": "address payable",
-        "name": "_to",
-        "type": "address"
-      }
+      { "internalType": "uint256", "name": "_amount", "type": "uint256" },
+      { "internalType": "address payable", "name": "_to", "type": "address" }
     ],
     "name": "witdraw",
     "outputs": [],
